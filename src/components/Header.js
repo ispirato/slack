@@ -89,5 +89,6 @@ const HeaderRight = styled.div`
     > .MuiSvgIcon-root {
         margin-left: auto;
         margin-right: 20px;
+        cursor: pointer;
     }
 `

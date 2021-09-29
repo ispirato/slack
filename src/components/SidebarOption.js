@@ -17,7 +17,7 @@ function SidebarOption({ Icon, title, addChannelOption }) {
 
 
     const selectChannel = () => {
-
+        alert('Select SidebarOption');
     }
 
     return (

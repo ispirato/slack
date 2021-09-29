@@ -10,25 +10,24 @@ function Sidebar() {
                 <SidebarInfo>
                     <h2>Профиль</h2>
                     <h3>
-                        <FiberManualRecord />
+                        <FiberManualRecord titleAccess="Редактировать" />
                         Владимир Иванов
                     </h3>
                 </SidebarInfo>
                 <Create />
             </SidebarHeader>
 
-            <SidebarOption Icon={InsertComment} title="Threads" />
-            <SidebarOption Icon={Inbox} title="Mentions & reactions" />
-            <SidebarOption Icon={Drafts} title="Saved items" />
-            <SidebarOption Icon={BookmarkBorder} title="Channel browser" />
-            <SidebarOption Icon={PeopleAlt} title="People & user groups" />
-            <SidebarOption Icon={Apps} title="Apps" />
-            <SidebarOption Icon={FileCopy} title="File browser" />
-            <SidebarOption Icon={ExpandLess} title="Show less" />
+            <SidebarOption Icon={InsertComment} title="Сообщения" />
+            <SidebarOption Icon={Inbox} title="Упоминания и реакции" />
+            <SidebarOption Icon={Drafts} title="Черновики" />
+            <SidebarOption Icon={BookmarkBorder} title="Сохранённые объекты" />
+            <SidebarOption Icon={PeopleAlt} title="Пользователи и группы" />
+            <SidebarOption Icon={Apps} title="Приложения" />
+            <SidebarOption Icon={FileCopy} title="Менеджер файлов" />
             <hr />
-            <SidebarOption Icon={ExpandMore} title="Channels" />
+            <SidebarOption Icon={ExpandMore} title="Каналы" />
             <hr />
-            <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
+            <SidebarOption Icon={Add} addChannelOption title="Создать канал" />
 
         </SidebarContainer>
     )
@@ -58,11 +57,16 @@ const SidebarHeader = styled.div`
     border-bottom: 1px solid #49274b;
 
     > .MuiSvgIcon-root {
+        cursor: pointer;
         padding: 8px;
         color: #49274b;
         font-size: 12px;
         background-color: white;
         border-radius: 999px;
+
+        :hover {
+            opacity: .8;
+        }
     }
 `
 
