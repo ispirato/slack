@@ -2,15 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { AccessTime, HelpOutline, Search } from '@material-ui/icons';
-import { Avatar } from '@material-ui/core'
+import { Avatar } from '@material-ui/core';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from '../firebase';
 
 function Header() {
+
+    const [user] = useAuthState(auth);
+
     return <HeaderContainer>
         { /* Header Left */}
         <HeaderLeft>
             <HeaderAvatar 
-                // TODO Add onClick
-
+                alt={user?.displayName}
+                src={user?.photoURL}
+                onClick={()=>auth.signOut()}
             />
             <AccessTime />
         </HeaderLeft>
@@ -38,6 +44,7 @@ const HeaderContainer = styled.div`
     padding: 10px 0;
     background-color: var(--slack-color);
     color: white;
+    z-index: 10;
 `;
 
 const HeaderLeft = styled.div`
